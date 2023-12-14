@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #undangan {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #tombol {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsif untuk perangkat dengan lebar layar kurang dari 600px */
+        @media only screen and (max-width: 600px) {
+            #undangan {
+                font-size: 24px;
+            }
+
+            #tombol {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="undangan">UNDANGAN PERNIKAHAN</div>
+    <div id="tombol" onclick="pindahPosisi()">KLIK UNTUK MELIHAT</div>
+
+    <script>
+        var ukuranAwal = {
+            lebar: 30,
+            tinggi: 15
+        };
+
+        function pindahPosisi() {
+            var tombol = document.getElementById('tombol');
+            var xPos = Math.max(0, Math.min(window.innerWidth - ukuranAwal.lebar, Math.random() * window.innerWidth - ukuranAwal.lebar));
+            var yPos = Math.max(0, Math.min(window.innerHeight - ukuranAwal.tinggi, Math.random() * window.innerHeight - ukuranAwal.tinggi));
+
+            tombol.style.position = 'absolute';
+            tombol.style.left = xPos + 'px';
+            tombol.style.top = yPos + 'px';
+        }
+    </script>
+</body>
+</html>
